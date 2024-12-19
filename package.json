@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@fastify/autoload": "^6.0.3",
+    "@fastify/cors": "^10.0.1",
     "@mikro-orm/core": "^6.4.1",
     "@mikro-orm/migrations": "^6.4.1",
     "@mikro-orm/mysql": "^6.4.1",

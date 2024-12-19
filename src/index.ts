@@ -1,5 +1,6 @@
 
 import fastify from 'fastify';
+import cors from '@fastify/cors';
 import autoload from '@fastify/autoload';
 import dotenv from 'dotenv';
 import path from 'path';
@@ -9,7 +10,7 @@ import { RequestContext } from '@mikro-orm/core';
 dotenv.config({ path: process.env.NODE_ENV });
 
 const app = fastify();
-
+app.register(cors, { origin: process.env.ORIGIN });
 app.register(autoload, { dir: path.join(__dirname, 'routes') });
 
 const initialise = async() => {
