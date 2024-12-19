@@ -8,7 +8,7 @@ const app: FastifyPluginAsync = async (app) => {
   const db = await initORM();
 
   app.get('/', async (req, res) => {
-    return await db.em.findAll(User, { populate: ['gear'] });
+    return await db.em.findAll(User, { populate: ['*'] });
   });
 
   app.get<{ Params: { id: string } }>('/create/:id', async (req, res) => {
