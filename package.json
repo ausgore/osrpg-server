@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "dev": "cross-env NODE_ENV='.env.dev' nodemon src/index.ts",
+    "migrate": "cross-env NODE_ENV='.env.dev' npx mikro-orm-esm migration:create --config src/mikro-orm.config.ts",
+    "update": "cross-env NODE_ENV='.env.dev' npx mikro-orm-esm migration:up --config src/mikro-orm.config.ts"
+  },
+  "dependencies": {
+    "@fastify/autoload": "^6.0.3",
+    "@mikro-orm/core": "^6.4.1",
+    "@mikro-orm/migrations": "^6.4.1",
+    "@mikro-orm/mysql": "^6.4.1",
+    "@mikro-orm/reflection": "^6.4.1",
+    "@mikro-orm/seeder": "^6.4.1",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.0"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^6.4.1",
+    "@types/node": "^22.10.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
