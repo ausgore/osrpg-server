@@ -3,8 +3,11 @@ import { User } from './user.entity';
 
 @Entity()
 export class Gear {
-  @OneToOne(() => User, user => user.gear, { owner: true, primary: true })
+  @OneToOne(() => User, { owner: true, primary: true })
   user!: User;
+
+  @Property()
+  mainhand?: number;
 
   @Property()
   offhand?: number;

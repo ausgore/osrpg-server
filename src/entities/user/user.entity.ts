@@ -7,10 +7,10 @@ export class User {
   @PrimaryKey()
   id!: string;
 
-  @OneToOne(() => Gear, gear => gear.user, { cascade: [Cascade.PERSIST], nullable: false })
+  @OneToOne(() => Gear, gear => gear.user, { cascade: [Cascade.PERSIST, Cascade.REMOVE], nullable: false })
   gear!: Gear;
 
-  @OneToOne(() => Skills, skills => skills.user, { cascade: [Cascade.PERSIST], nullable: false })
+  @OneToOne(() => Skills, sklil => sklil.user, { cascade: [Cascade.PERSIST, Cascade.REMOVE], nullable: false })
   skills!: Gear;
 
   constructor(id: string) {
