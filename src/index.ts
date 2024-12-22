@@ -6,17 +6,23 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { initORM } from './orm';
 import { RequestContext } from '@mikro-orm/core';
+import swagger from "./plugins/swagger.plugin";
 
 dotenv.config({ path: process.env.NODE_ENV });
 
-const app = fastify();
-app.register(cors, { origin: process.env.ORIGIN });
-app.register(autoload, { dir: path.join(__dirname, 'routes') });
-
-const initialise = async() => {
+const initialise = async () => {
   const db = await initORM();
+  const app = fastify();
+  
+  app.register(cors, { origin: process.env.ORIGIN });
+  app.register(swagger);
+  app.register(autoload, { dir: path.join(__dirname, 'routes') });
+  
   app.addHook("onRequest", (req, res, done) => RequestContext.create(db.orm.em, done));
   app.addHook("onClose", () => db.orm.close());
+  
+  await app.ready();
+  app.swagger();
 
   await app.listen({ 
     host: process.env.SERVER_HOST,
