@@ -1,5 +1,6 @@
-import { EntityManager, MikroORM } from "@mikro-orm/mysql";
-import config from "./mikro-orm.config";
+import { EntityManager, MikroORM } from '@mikro-orm/mysql';
+import config from './mikro-orm.config';
+
 
 export interface Services {
   orm: MikroORM;

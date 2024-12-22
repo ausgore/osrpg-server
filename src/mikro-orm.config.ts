@@ -1,7 +1,7 @@
-import { Migrator } from "@mikro-orm/migrations";
-import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
-import { SeedManager } from "@mikro-orm/seeder";
-import { MySqlDriver, Options } from "@mikro-orm/mysql";
+import { Migrator } from '@mikro-orm/migrations';
+import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
+import { SeedManager } from '@mikro-orm/seeder';
+import { MySqlDriver, Options } from '@mikro-orm/mysql';
 import dotenv from 'dotenv';
 
 dotenv.config({ path: process.env.NODE_ENV });

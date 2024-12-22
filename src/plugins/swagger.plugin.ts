@@ -1,6 +1,6 @@
-import fastifySwagger from "@fastify/swagger";
-import fastifySwaggerUi from "@fastify/swagger-ui";
-import fastifyPlugin from "fastify-plugin";
+import fastifySwagger from '@fastify/swagger';
+import fastifySwaggerUi from '@fastify/swagger-ui';
+import fastifyPlugin from 'fastify-plugin';
 
 const swagger = fastifyPlugin(async app => {
 	app.register(fastifySwagger, {
