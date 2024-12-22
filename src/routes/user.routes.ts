@@ -1,5 +1,5 @@
-import { initORM } from '../orm';
-import { User } from '../entities/user/user.entity';
+import { initORM } from '@orm';
+import { User } from '@entities/user/user.entity';
 import { Type } from "@sinclair/typebox";
 import { FastifyPluginAsyncTypebox } from "@fastify/type-provider-typebox";
 

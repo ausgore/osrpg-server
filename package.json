@@ -1,4 +1,8 @@
 {
+  "_moduleAliases": {
+    "@orm": "src/orm",
+    "@entities": "src/entities"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV='.env.dev' nodemon src/index.ts",
     "migrate": "cross-env NODE_ENV='.env.dev' npx mikro-orm-esm migration:create --config src/mikro-orm.config.ts",
@@ -18,7 +22,8 @@
     "@sinclair/typebox": "^0.34.13",
     "dotenv": "^16.4.7",
     "fastify": "^5.2.0",
-    "fastify-plugin": "^5.0.1"
+    "fastify-plugin": "^5.0.1",
+    "module-alias": "^2.2.3"
   },
   "devDependencies": {
     "@mikro-orm/cli": "^6.4.1",

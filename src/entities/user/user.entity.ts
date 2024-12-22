@@ -1,7 +1,6 @@
-import { AfterCreate, Cascade, Entity, OneToOne, PrimaryKey } from '@mikro-orm/core';
+import { Cascade, Entity, OneToOne, PrimaryKey } from '@mikro-orm/core';
 import { Gear } from './gear.entity';
 import { Skills } from './skills.entity';
-import { initORM } from '../../orm';
 
 @Entity()
 export class User {
